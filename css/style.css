@@ -54,6 +54,47 @@ body {
     transition: background 0.3s; /* Smooth background transition */
     z-index: 1000; /* Ensure it appears above other content */
 }
+/* Mode Buttons! */
+
+.mode-button {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border: solid 3px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-color: #949494;
+}
+
+
+#normal-mode {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#normal-mode:hover {
+    background-color: #e0e0e0;
+}
+
+#dark-mode {
+    background-color: #0a0053;
+    color: #fff;
+}
+
+#dark-mode:hover {
+    background-color: #444;
+}
+
+#high-contrast-mode {
+    background-color: #ffcc00;
+    color: #000;
+}
+
+#high-contrast-mode:hover {
+    background-color: #e0b800;
+}
+
 
 /* Meet Button Styles */
 .meet-button {
@@ -526,4 +567,5 @@ body.high-contrast .athlete-card .card-back {
 .athlete-card.flipped .card-inner {
     transform: rotateY(180deg); /* Flip the card */
 }
+
 

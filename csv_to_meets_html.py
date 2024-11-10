@@ -29,9 +29,9 @@ def csv_to_html(csv_filename, output_folder):
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <button id="normal-mode" onclick="setMode('normal')">Normal</button>
-    <button id="dark-mode" onclick="setMode('dark')">Dark Mode</button>
-    <button id="high-contrast-mode" onclick="setMode('high-contrast')">High Contrast</button>
+    <button class="mode-button" id="normal-mode" onclick="setMode('normal')">Normal</button>
+    <button class="mode-button" id="dark-mode" onclick="setMode('dark')">Dark Mode</button>
+    <button class="mode-button" id="high-contrast-mode" onclick="setMode('high-contrast')">High Contrast</button>
     
     <a href="#summary" class="skip-link">Skip to Main Content</a>
     <nav>
@@ -73,6 +73,7 @@ def csv_to_html(csv_filename, output_folder):
                     html_content += "</table>\n"
                     html_content += """</section>\n
                     <section id="individual-results">\n
+                    
                      <h2 class="sticky-header">Individual Results</h2>
                      <div class="athlete-grid">"""  # Added athlete-grid parent here
 
@@ -88,8 +89,8 @@ def csv_to_html(csv_filename, output_folder):
                         <div class="card-front">
                             <figure> 
                             
-                                <img src="../images/profiles/{profile_pic}" alt="Profile picture of {name}"> 
-                                
+                                <img src="../images/profiles/{profile_pic}" alt="Profile picture of {name}" 
+                                 onerror="this.onerror=null; this.src='../images/default_image.jpg';"> 
                                <div class="name">{name}</div>  <!-- Display Name -->
                             </figure>
                         </div>
