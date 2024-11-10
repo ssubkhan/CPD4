@@ -44,11 +44,14 @@ def csv_to_html(csv_filename, output_folder):
         </ul>
     </nav>
 
+    
+
+    <header>
+
      <div class="gif-container">
         <img src="../images/gif.gif" alt="Descriptive text for the GIF">
     </div>
-
-    <header>
+    
         <h1><a href="{link_url}">{link_text}</a></h1>
         <h2>{h2_text}</h2>
     </header>
