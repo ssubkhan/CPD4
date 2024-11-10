@@ -67,3 +67,16 @@ if (prefersReducedMotion) {
     });
   });
 }
+
+// Event listener for 'Enter' key press on athlete cards
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+      // Get the currently focused athlete card
+      const focusedCard = document.querySelector('.athlete-card:focus');
+
+      // If a card is focused, toggle the flip effect
+      if (focusedCard) {
+          focusedCard.classList.toggle('flipped');
+      }
+  }
+});

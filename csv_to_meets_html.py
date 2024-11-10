@@ -87,8 +87,10 @@ def csv_to_html(csv_filename, output_folder):
                     <div class="card-inner">
                         <div class="card-front">
                             <figure> 
+                            
                                 <img src="../images/profiles/{profile_pic}" alt="Profile picture of {name}"> 
-                                <figcaption>{name}</figcaption>
+                                
+                               <div class="name">{name}</div>  <!-- Display Name -->
                             </figure>
                         </div>
                         <div class="card-back">
