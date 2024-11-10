@@ -1,0 +1,460 @@
+/* Mobile View Optimization */
+@media (min-width: 320px) {
+    body {
+        font-size: 16px; /* Adjust font size for readability on smaller screens */
+    }
+
+    /* Additional styles for mobile optimization */
+    .meet-button {
+        padding: 12px 20px; /* Adjust button padding for smaller screens */
+        font-size: 14px; /* Reduce font size for buttons */
+    }
+
+    .summary {
+        padding: 15px; /* Adjust padding for summary cards */
+    }
+
+    table {
+        font-size: 14px; /* Reduce font size for table content */
+    }
+
+    th, td {
+        padding: 10px; /* Reduce padding for table cells */
+    }
+
+    .athlete-card {
+        width: 90%; /* Make athlete cards take more width on smaller screens */
+    }
+}
+
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    line-height: 1.6;
+    padding-top: 60px; /* Space for the fixed header */
+    background-color: #f9f9f9; /* Very light background */
+    color: #333; /* Dark text for readability */
+    margin: 0; /* Remove default margin */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: 10px; /* Position it at the top */
+    left: 10px; /* Position it to the left */
+    background: #fdfdfd; /* Light background for visibility */
+    color: #000000; /* Black text for visibility */
+    border-radius: 4px; /* Rounded corners for aesthetics */
+    padding: 8px 12px; /* Add padding for better clickable area */
+    text-decoration: none; /* Remove underline */
+    transition: background 0.3s; /* Smooth background transition */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Meet Button Styles */
+.meet-button {
+    display: inline-block; /* Allows padding and margins */
+    background-color: #001a37; /* Button color */
+    color: white; /* Text color */
+    padding: 15px 25px; /* Padding for button size */
+    margin: 10px; /* Spacing between buttons */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Slightly rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for effects */
+}
+
+/* Hover Effect for Meet Buttons */
+.meet-button:hover {
+    background-color: #710055; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Accessibility for Meet Buttons */
+.meet-button:focus {
+    outline: 3px solid #0056b3; /* Outline for keyboard navigation */
+}
+
+/* Change color on focus */
+.skip-link:focus {
+    background: #0056b3; /* Darker blue on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212; /* Darker background for dark mode */
+    color: #e0e0e0; /* Light text for dark mode */
+}
+
+.dark-mode header h1 a {
+    color: #bb86fc; /* Light purple link color for dark mode */
+}
+
+.dark-mode nav {
+    background-color: #1e1e1e; /* Dark background for nav in dark mode */
+}
+
+.dark-mode nav a {
+    color: #e0e0e0; /* Light text for nav links in dark mode */
+}
+
+.dark-mode table {
+    background-color: #1e1e1e; /* Darker background for tables */
+}
+
+.dark-mode th {
+    background-color: #3a3a3a; /* Darker header for tables */
+    color: #e0e0e0; /* Light text for table headers */
+}
+
+.dark-mode .athlete {
+    background: #1e1e1e; /* Darker background for athlete cards */
+    border: 1px solid #444; /* Darker border for athlete cards */
+}
+
+.dark-mode .athlete-card {
+    background-color: #2a2a2a; /* Slightly darker background for even cards in dark mode */
+}
+
+.dark-mode footer {
+    background: #1e1e1e; /* Darker footer background */
+    color: #e0e0e0; /* Light footer text */
+}
+
+.dark-mode .summary {
+    background: #1e1e1e; /* Darker background for summary in dark mode */
+    color: #e0e0e0; /* Light text for readability in dark mode */
+}
+
+/* High Contrast Mode Styles */
+.high-contrast {
+    background-color: #000; /* Black background for high contrast */
+    color: #ff0; /* Bright yellow text for high contrast */
+}
+
+.high-contrast header, 
+.high-contrast nav, 
+.high-contrast footer {
+    background-color: #000; /* Black background for header, nav, footer */
+}
+
+.high-contrast nav a,
+.high-contrast header h1 a,
+.high-contrast .summary {
+    background-color: #000;
+    color: #ff0; /* Bright yellow text for links and summary */
+    text-decoration: none; /* Remove underline for links */
+}
+
+.high-contrast table {
+    background-color: #000; /* Black background for tables */
+}
+
+.high-contrast th {
+    background-color: #ff0; /* Yellow background for table headers */
+    color: #000; /* Black text for table headers */
+}
+
+.high-contrast .athlete {
+    background: #000; /* Black background for athlete cards */
+    border: 1px solid #ff0; /* Yellow border for athlete cards */
+}
+
+.high-contrast .athlete-card {
+    background-color: #111; /* Slightly darker background for even cards in high contrast mode */
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*Filter */
+
+.filter{
+    filter:grayscale();
+    opacity: .5;
+}
+
+header h1 a {
+    color: navy; /* Navy color for header link */
+    text-decoration: none;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #333; /* Dark background for navbar */
+    padding: 10px 0; /* Padding for touch targets */
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+}
+
+nav ul li {
+    display: inline; /* Horizontal navigation */
+    margin-right: 15px;
+}
+
+nav a {
+    color: white; /* White text for nav links */
+    text-align: center;
+    text-decoration: none;
+    padding: 10px; /* Increase touch target size */
+    border: 2px solid transparent; /* Initial border, will change on hover and focus */
+    border-radius: 5px; /* Slightly rounded corners for aesthetics */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+/* Hover and Focus Styles */
+nav a:hover,
+nav a:focus {
+    border-color: #007bff; /* Change border color on hover/focus */
+    outline: none; /* Remove default outline */
+    background-color: rgba(0, 123, 255, 0.1); /* Optional: light background on hover/focus */
+}
+
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+/* Summary Section Styles */
+.summary {
+    background: #e9e9e9; /* Light card background */
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 0px;
+    border: 2px solid #ccc; /* Light gray border */
+}
+
+/* Table Styles */
+table {
+    width: 100%; /* Full width for better mobile experience */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px; /* Increased padding for touch targets */
+    text-align: left;
+    border: 1px solid #ccc; /* Light border around each cell */
+}
+
+th {
+    background-color: #0d0368; /* Blue background for table headers */
+    color: white;
+}
+
+/* Normal Mode Alternating Row Colors */
+tr:nth-child(even) {
+    background-color: #f0f0f0; /* Light gray for even rows */
+}
+
+tr:nth-child(odd) {
+    background-color: #e0e0e0; /* Slightly darker gray for odd rows */
+}
+
+/* Dark Mode Alternating Row Colors */
+.dark-mode tr:nth-child(even) {
+    background-color: #2a2a2a; /* Darker gray for even rows in dark mode */
+}
+
+.dark-mode tr:nth-child(odd) {
+    background-color: #3a3a3a; /* Even darker gray for odd rows in dark mode */
+}
+
+/* High Contrast Mode Alternating Row Colors */
+.high-contrast tr:nth-child(even) {
+    background-color: #000; /* Black for even rows in high contrast */
+}
+
+.high-contrast tr:nth-child(odd) {
+    background-color: rgb(26, 26, 26); /* Yellow for odd rows in high contrast */
+}
+
+
+
+
+/* Sticky Header Style */
+.sticky-header {
+    position: sticky;
+    background-color: #e8e8e8; /* Light background for normal mode */
+    top: 0;
+    z-index: 1000; /* Ensures it stays on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
+/* Dark Mode Sticky Header */
+.dark-mode .sticky-header {
+    background-color: #1e1e1e; /* Darker background for dark mode */
+    color: #e0e0e0; /* Light text for dark mode */
+}
+
+/* High Contrast Mode Sticky Header */
+.high-contrast .sticky-header {
+    background-color: #000; /* Black background for high contrast */
+    color: #ff0; /* Bright yellow text for high contrast */
+}
+
+
+
+.athlete:hover {
+    transform: scale(1.02); /* Scale effect on hover */
+}
+
+/* Accessibility Enhancements */
+.athlete:focus {
+    outline: 3px solid #007bff; /* Outline for keyboard navigation */
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Gallery Styles */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap images in the gallery */
+}
+
+.gallery-container img {
+    width: calc(33.333% - 10px); /* Three images per row */
+    margin: 5px; /* Spacing between images */
+    border-radius: 5px; /* Rounded corners for aesthetics */
+}
+
+/* Athlete Card Grid Styles */
+.athlete-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for full-width cards */
+    gap: 20px; /* Space between cards */
+    padding: 20px; /* Padding around grid */
+    justify-items: center; /* Center cards */
+    width: 100%; /* Full width */
+    box-sizing: border-box;
+}
+
+/* Athlete Card Styles */
+.athlete-card {
+    perspective: 1000px; /* Adds perspective for the 3D flip effect */
+    width: 100%; /* Full width of the container */
+    max-width: 400px; /* Optional: maximum width to limit size */
+    height: 500px; /* Fixed height for the card */
+    margin: 0 auto 20px; /* Center the card and add bottom margin */
+}
+
+/* Inner card that will flip */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Ensure inner card takes full height */
+    transform-style: preserve-3d; /* Enable 3D effect */
+    transition: transform 0.6s; /* Duration of flip */
+}
+
+/* Card Front and Back Base Styles */
+.athlete-card .card-front,
+.athlete-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%; /* Full height of the card */
+    backface-visibility: hidden; /* Hide back face */
+    display: flex; /* Flexbox for centering content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    border-radius: 8px; /* Match border radius */
+    padding: 15px; /* Internal padding */
+    box-sizing: border-box;
+    background-color: #f9f9f9; /* Light background for card */
+    border: 3px solid #ddd; /* Light border */
+}
+
+/* Dark mode styles */
+body.dark-mode .athlete-card .card-front,
+body.dark-mode .athlete-card .card-back {
+    background-color: #333; /* Dark background for card */
+    border: 3px solid #555; /* Darker border */
+    color: #fff; /* Light text for contrast */
+}
+
+/* High contrast mode styles */
+body.high-contrast .athlete-card .card-front,
+body.high-contrast .athlete-card .card-back {
+    background-color: #000; /* Black background for card */
+    border: 3px solid #ff0; /* Bright yellow border for high contrast */
+    color: #ff0; /* Bright text for high contrast */
+}
+
+.card-front img {
+    border-radius: 400px; /* Circular profile picture */
+    width: 60%; /* Adjust width to fill more space */
+    height: auto; /* Maintain aspect ratio */
+    border: 5px solid #a3a3a3; /* Border color and thickness */
+    display: block; /* Ensure it behaves like a block element */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for a lifted effect */
+    margin: 0 auto; /* Center the image */
+}
+
+/* Card Back Styles */
+.card-back {
+    transform: rotateY(180deg); /* Start back face rotated */
+    padding: 10px; /* Padding for content on the back */
+    align-items: flex-start; /* Align items at the start for the back */
+}
+
+/* Description List Styles */
+.card-back dl {
+    margin: 10px 0; /* Spacing for description list */
+}
+
+.card-back dt {
+    font-weight: bold; /* Bold labels */
+}
+
+.card-back dd {
+    margin: 0 0 10px; /* Spacing for description */
+}
+
+/* Hover Effects */
+.athlete-card:hover {
+    /* No longer necessary to apply hover scale here */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Reduced Motion Styles */
+@media (prefers-reduced-motion: reduce) {
+
+     /* Disable all transitions and animations */
+  * {
+    transition: none !important; /* Disable all transitions */
+    animation: none !important; /* Disable all animations */
+  }
+  
+  /* Disable the flip animation in reduced motion mode */
+  .card-inner {
+    transition: none; /* Disable flip animation */
+    transform: none; /* Make sure it's initially showing the front */
+  }
+
+  /* Allow click to toggle between front and back */
+  .athlete-card.clicked .card-inner {
+    transform: rotateY(180deg); /* Flip the card manually on click */
+  }
+}
