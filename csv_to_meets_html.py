@@ -74,7 +74,7 @@ def csv_to_html(csv_filename, output_folder):
                     html_content += """</section>\n
                     <section id="individual-results">\n
                      <h2 class="sticky-header">Individual Results</h2>
-                    <div class="results-grid">"""
+                     <div class="athlete-grid">"""  # Added athlete-grid parent here
 
                 place = row[0]
                 grade = row[1]
@@ -83,7 +83,7 @@ def csv_to_html(csv_filename, output_folder):
                 profile_pic = row[7]
 
                 html_content += f"""
-                <div class="athlete-card">
+                <div class="athlete-card" tabindex="0">
                     <div class="card-inner">
                         <div class="card-front">
                             <figure> 
@@ -102,7 +102,7 @@ def csv_to_html(csv_filename, output_folder):
                 </div>
                 """
 
-        html_content += """</div> <!-- Close results-grid -->
+        html_content += """</div> <!-- Close athlete-grid -->
         </section>\n
         <section id="gallery">
               <h2 class="sticky-header">Gallery</h2>

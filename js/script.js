@@ -1,4 +1,3 @@
-
 console.log('Script loaded');
 
 // Select buttons or switches for each mode toggle
@@ -6,40 +5,40 @@ const darkModeButton = document.getElementById('dark-mode');
 const highContrastButton = document.getElementById('high-contrast-mode');
 const normalModeButton = document.getElementById('normal-mode');
 
-// Function to activate dark mode
-function activateDarkMode() {
-    document.body.classList.add('dark-mode');
-    document.body.classList.remove('high-contrast'); // Remove high-contrast if active
-    localStorage.setItem('theme', 'dark'); // Save theme to localStorage
-}
+// Function to set the mode based on a passed value ('dark', 'high-contrast', or 'normal')
+function setMode(mode) {
+    // Remove any active modes
+    document.body.classList.remove('dark-mode', 'high-contrast');
 
-// Function to activate high-contrast mode
-function activateHighContrastMode() {
-    document.body.classList.add('high-contrast');
-    document.body.classList.remove('dark-mode'); // Remove dark mode if active
-    localStorage.setItem('theme', 'high-contrast'); // Save theme to localStorage
-}
+    // Add the selected mode class
+    if (mode === 'dark') {
+        document.body.classList.add('dark-mode');
+    } else if (mode === 'high-contrast') {
+        document.body.classList.add('high-contrast');
+    }
 
-// Function to revert to normal mode
-function activateNormalMode() {
-    document.body.classList.remove('dark-mode', 'high-contrast'); // Remove both modes
-    localStorage.setItem('theme', 'normal'); // Save theme to localStorage
+    // Save the selected mode to localStorage
+    localStorage.setItem('theme', mode);
 }
 
 // Event listeners to toggle the modes when buttons are clicked
-darkModeButton.addEventListener('click', activateDarkMode);
-highContrastButton.addEventListener('click', activateHighContrastMode);
-normalModeButton.addEventListener('click', activateNormalMode);
+darkModeButton.addEventListener('click', function() {
+    setMode('dark');
+});
+highContrastButton.addEventListener('click', function() {
+    setMode('high-contrast');
+});
+normalModeButton.addEventListener('click', function() {
+    setMode('normal');
+});
 
 // Check localStorage for saved theme preference and apply it
 function loadTheme() {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        activateDarkMode();
-    } else if (savedTheme === 'high-contrast') {
-        activateHighContrastMode();
+    if (savedTheme) {
+        setMode(savedTheme); // Apply saved theme
     } else {
-        activateNormalMode(); // Default to normal mode if no theme is saved
+        setMode('normal'); // Default to normal mode if no theme is saved
     }
 }
 
