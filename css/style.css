@@ -411,7 +411,7 @@ img {
 .athlete-card {
     perspective: 1000px; /* Adds perspective for the 3D flip effect */
     width: 100%; /* Ensure the card takes the full width of the grid cell */
-    max-width: 350px; /* prevent cards from getting too large */
+    width: clamp(200px, 80%, 100%); /* Sets a minimum and maximum width */
     height: 400px; /* Fixed height for the card */
     margin: 0 auto 20px; /* Center the card and add bottom margin */
 }
