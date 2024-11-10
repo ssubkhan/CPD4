@@ -43,6 +43,11 @@ def csv_to_html(csv_filename, output_folder):
             <li><a href="#gallery">Gallery</a></li>
         </ul>
     </nav>
+
+     <div class="gif-container">
+        <img src="../images/gif.gif" alt="Descriptive text for the GIF">
+    </div>
+
     <header>
         <h1><a href="{link_url}">{link_text}</a></h1>
         <h2>{h2_text}</h2>
@@ -65,17 +70,24 @@ def csv_to_html(csv_filename, output_folder):
                 if row[0] == "Place":
                     html_content += f"<tr><th>{row[0]}</th><th>{row[1]}</th><th>{row[2]}</th></tr>\n"
                 else:
-                    html_content += f"<tr><td>{row[0]}</td><td>{row[1]}</td><td>{row[2]}</td></tr>\n"
+                    # Make the row focusable and readable by screen readers
+                    html_content += f"""<tr tabindex="0" aria-label="Place: {row[0]}, Team: {row[1]}, Score: {row[2]}">
+                                        <td>{row[0]}</td>
+                                        <td>{row[1]}</td>
+                                        <td>{row[2]}</td>
+                                    </tr>\n"""
 
             elif len(row) == 8 and row[5].strip().lower() == 'ann arbor skyline':
                 if table_start:
                     table_start = False
                     html_content += "</table>\n"
+
+
                     html_content += """</section>\n
                     <section id="individual-results">\n
                     
                      <h2 class="sticky-header">Individual Results</h2>
-                     <div class="athlete-grid">"""  # Added athlete-grid parent here
+                     <div class="athlete-grid">"""  #  athlete-grid parent here
 
                 place = row[0]
                 grade = row[1]
